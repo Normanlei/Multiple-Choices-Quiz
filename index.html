@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+<body>
+    <!--Header Section-->
+    <div class="container-fluid" id="header">
+        <div class="row">
+            <div class="col-sm">
+                <a href="#" id="viewscore">View Highscores</a>
+            </div>
+            <div class="col-sm" style="text-align: end">
+                <a id="time-section">Time:<span id="timer">0</span></a>
+            </div>
+        </div>
+    </div>
+    <!--Body Section-->
+    <div id="container" class="jumbotron py-4 mt-5">
+        <!--Landing Page-->
+        <div id="landingpage">
+            <h1 class="text-center">Friendship Quiz</h1>
+            <h4 class="text-center" id="intro">This is a test called "Friendship", to test how close we are as friend of
+                mine</h4>
+            <div class="text-center">
+                <button type="button" class="btn btn-success" id="start">Start Quiz</button>
+            </div>
+        </div>
+
+        <!--Questions Page-->
+        <div id="quizpage" style="display: none">
+            <div id="question"></div>
+            <div id="choices">
+                <button type="button" class="btn btn-primary" id="A"></button> <br>
+                <button type="button" class="btn btn-primary" id="B"></button> <br>
+                <button type="button" class="btn btn-primary" id="C"></button> <br>
+                <button type="button" class="btn btn-primary" id="D"></button>
+            </div>
+            <div id="isCorrect"></div>
+        </div>
+
+        <!--Enter Initial Page-->
+        <div id="scoreenterpage" style="display:none">
+            <h1>All Done!!!</h1>
+            <h5>Your Score is <span id="score"></span></h5>
+            <form class="form-inline">
+                <h5 class="m-0 mr-2">Enter Your Initial:</h5>
+                <input type="initial" class="form-control mr-4" style="width: 50%" id="initial"
+                    placeholder="Your Initial">
+                <button type="button" class="btn btn-success" id="submit">submit</button>
+            </form>
+            <div id="isCorrect1"></div>
+        </div>
+
+        <!--ScoreList / Final Page-->
+        <div id="recordpage" style="display:none">
+            <h1 class="mb-4">High Scores</h1>
+            <div id="scoreList"></div>
+            <form class="form-inline">
+                <button type="button" class="btn btn-warning mr-5" id="goback">go back</button>
+                <button type="button" class="btn btn-warning" id="clear">clear scores</button>
+            </form>
+        </div>
+        <script src="questions.js"></script>
+</body>
+
+</html>
