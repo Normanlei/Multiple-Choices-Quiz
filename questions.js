@@ -60,7 +60,10 @@ var score = 0;
 var record = [];
 localStorage.setItem("data", JSON.stringify(record));
 
-viewScorebtn.addEventListener("click",renderRecorePage);
+viewScorebtn.addEventListener("click",function(){
+    renderRecorePage();
+});
+
 startbtn.addEventListener("click", startQuiz);
 
 choices.addEventListener("click", function (event) {
@@ -79,7 +82,14 @@ choices.addEventListener("click", function (event) {
 submitbtn.addEventListener("click", submitScore);
 
 gobackbtn.addEventListener("click", function () {
-    window.location.reload();
+    //window.location.reload();
+    //window.history.go(-1);
+    landingPage.style.display = "block";
+    quizPage.style.display = "none";
+    initialenterpage.style.display = "none";
+    header.style.display = "block";
+    finalPage.style.display = "none";
+    scoreList.innerHTML = "";
 });
 
 clearbtn.addEventListener("click",function(){
@@ -91,7 +101,8 @@ clearbtn.addEventListener("click",function(){
 function startQuiz() {
     landingPage.style.display = "none";
     quizPage.style.display = "block";
-    renderQuestion(index);
+    isCorrect = null;
+    renderQuestion();
     timeCountDown = setInterval(timeCount, 1000);
 }
 
@@ -139,6 +150,7 @@ function checkAns(pick) {
 
 
 function finishQuiz() {
+    index = 0;
     if (timeLeft < 0) {
         timeLeft = 0;
         shownTime.innerHTML = "0 s";
@@ -147,7 +159,7 @@ function finishQuiz() {
     initialenterpage.style.display = "block";
     score = timeLeft + score * 5;
     finalScore.innerHTML = " " + score;
-    if (isCorrect) showAns1.innerHTML = "<hr> <h6>Correct!!!</h6>";
+    if (isCorrect===true) showAns1.innerHTML = "<hr> <h6>Correct!!!</h6>";
     else if (isCorrect === false) showAns1.innerHTML = "<hr> <h6>Wrong!!!</h6>";
     else showAns1.innerHTML = "<hr> <h6>Time's Out!!!</h6>";
     setTimeout(function () {
@@ -162,6 +174,7 @@ function submitScore() {
     }
     else{
     var initialInput = initial.value.trim();
+    initial.value = "";
     var quizRecord = {
         initialName: initialInput,
         score: score
@@ -169,6 +182,10 @@ function submitScore() {
     record = JSON.parse(localStorage.getItem("data"));
     record.push(quizRecord);
     localStorage.setItem("data", JSON.stringify(record));
+    score = 0;
+    isCorrect = null;
+    timeLeft = totalTime;
+    shownTime.innerHTML = "0 s";
     renderRecorePage();
     }
 }
