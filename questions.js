@@ -58,7 +58,9 @@ var timeLeft = 75;
 var timeCountDown;
 var score = 0;
 var record = [];
-localStorage.setItem("data", JSON.stringify(record));
+var tempRecord = JSON.parse(localStorage.getItem("data"));
+if (tempRecord!==null) record = tempRecord;
+else localStorage.setItem("data", JSON.stringify(record));
 
 viewScorebtn.addEventListener("click",function(){
     renderRecorePage();
