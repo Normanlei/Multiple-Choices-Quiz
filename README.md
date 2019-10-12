@@ -25,14 +25,14 @@ In the process of building this quiz, I have learned:
 * Familiarize using javascript to add more functional features along with html and css styling
 * Get my head wet on jQuery to similate adding functional features as Javascript
 * Familiarize using audio tag in html, and make is function in Javascript
-<img src="asset/image/audio-tag.png">
+<img src="asset/image/audio-tag.png" width= "300px">
 * Familiarize using localStorage to persist data
 * Especially make used of these funcional features: 
 - Built-in Comparator funciton for arrays.sort
 - Add prototype onto audio tag in html
 - audio.play(), audio.stop()
 * Adding some logic functionalities feature, like:
-![](https://drive.google.com/file/d/1jzJSCGF9kNdmy50hd9IV2QjOlOzMta0o/view)
+![](asset/image/video.gif)
 
 ## Credits 
 
