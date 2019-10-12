@@ -7,10 +7,13 @@ As you proceed as a web developer, I will probably be asked to complete a coding
 Currently, the Quiz I built has a few criterias as below:
 * Landing Page to trigger the start quiz button
 <img src="asset/image/landing-page.png" height="200px">
+
 * Question Page to render the questions along with timer constraints
 <img src="asset/image/question-page.png" height="200px">
+
 * Initial Name page to local store the score along with your initial name
 <img src="asset/image/initial-name-page.png" height="200px">
+
 * Final/Highscores page to list out all the data in localstore
 <img src="asset/image/final-page.png" height="200px">
 
