@@ -32,6 +32,7 @@ In the process of building this quiz, I have learned:
 - Add prototype onto audio tag in html
 - audio.play(), audio.stop()
 * Adding some logic functionalities feature, like:
+
 ![video](./asset/image/video.gif)
 
 ## Credits 
