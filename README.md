@@ -2,7 +2,7 @@
 
 ## Description
 
-... 
+As you proceed as a web developer, I will probably be asked to complete a coding assessment. These assessments are typically a combination of multiple-choice questions and interactive challenges. Quiz is one of the critical way to hold assessment.I to build a code quiz with multiple-choice questions named "Friendship Quiz" to assess if the user is close enough or not as friend of mine. 
 
 Currently, the Quiz I built has a few criterias as below:
 * Landing Page to trigger the start quiz button
@@ -44,6 +44,7 @@ I am here to acknowlage to the Coding Bootcamp of University of Washington along
 * Jason Rosen (Instructor)
 * Daniel Mont-Eton (TA)
 * Kris Shore (TA)
+* SFX Audio Resources (https://github.com/arnofaure/free-sfx)
 
 
 ## License
@@ -68,3 +69,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
