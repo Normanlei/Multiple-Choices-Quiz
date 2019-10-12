@@ -8,14 +8,14 @@ html{
 body{
     height: 100%;
     min-height: 100%;
+    margin: 0;
+    font-size: 30px;
     /*To Make Background Fulfill Completely*/
     background: url("https://c.ndtvimg.com/2019-08/2cad5g74_friendship-day-2019_625x300_03_August_19.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    margin: 0;
-    font-size: 30px;
 }
 
 .jumbotron {

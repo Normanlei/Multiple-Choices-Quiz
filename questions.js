@@ -1,3 +1,4 @@
+ // Variables Defined by ID
 var viewScorebtn = document.getElementById("viewscore");
 var shownTime = document.getElementById("timer");
 var startbtn = document.getElementById("start");
@@ -7,8 +8,8 @@ var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
-var showAns = document.getElementById("isCorrect");
-var showAns1 = document.getElementById("isCorrect1");
+var showAns = document.getElementById("isCorrect");// the answer shown on the question page
+var showAns1 = document.getElementById("isCorrect1");//the answer shown on the initial-name page 
 var initial = document.getElementById("initial");
 var finalScore = document.getElementById("score");
 var submitbtn = document.getElementById("submit");
@@ -26,6 +27,8 @@ var startSound = document.getElementById("startSound");
 var endingSound = document.getElementById("endingSound");
 $("#friend-summary").hide();
 $("#newfriend-summary").hide();
+
+//Questions-List
 var questionCollection = [
     {
         title: "Where do I come from?",
@@ -54,7 +57,7 @@ var questionCollection = [
     }
 ];
 
-
+// New Variables Definitions
 var qcLength = questionCollection.length;
 var index = 0;
 var isCorrect = null;
@@ -62,25 +65,30 @@ var totalTime = 75;
 var timeLeft = 75;
 var timeCountDown;
 var score = 0;
+//localStore Initialation
 var record = [];
 var tempRecord = JSON.parse(localStorage.getItem("data"));
 if (tempRecord !== null) record = tempRecord;
 else localStorage.setItem("data", JSON.stringify(record));
 
+
+// Add a stop prototype to html audio element
 HTMLAudioElement.prototype.stop = function () {
     this.pause();
     this.currentTime = 0.0;
 }
 
+// Click Events //
 
-viewScorebtn.addEventListener("click", function () {
-    renderRecorePage();
-});
+// HighScore Button on the left-top of the page
+viewScorebtn.addEventListener("click", renderRecorePage);
 
+// Start Quiz Button
 startbtn.addEventListener("click", startQuiz);
 
+
+// Multiple Choices Selected
 choices.addEventListener("click", function (event) {
-    //console.log(event.target.firstChild.textContent.substring(3));
     if (event.target.localName == "button") {
         event.preventDefault();
         var pick = event.target.firstChild.textContent.substring(3);
@@ -92,8 +100,12 @@ choices.addEventListener("click", function (event) {
     }
 });
 
+
+//Initial-name Submit 
 submitbtn.addEventListener("click", submitScore);
 
+
+// Go back buttton on the highscore page === refresh page
 gobackbtn.addEventListener("click", function () {
     window.location.reload();
     //window.history.go(-1);
@@ -105,12 +117,18 @@ gobackbtn.addEventListener("click", function () {
     // scoreList.innerHTML = "";
 });
 
+
+// clear the localStore 
 clearbtn.addEventListener("click", function () {
     record = [];
     localStorage.setItem("data", JSON.stringify(record));
     scoreList.innerHTML = "";
 });
 
+
+// click-triggered Functions//
+
+// startQuiz Button is clicked
 function startQuiz() {
     startSound.play();
     landingPage.style.display = "none";
@@ -119,7 +137,7 @@ function startQuiz() {
     renderQuestion();
     timeCountDown = setInterval(timeCount, 1000);
 }
-
+// startQuiz button is clicked and timer is triggered.
 function timeCount() {
     if (timeLeft > 0) {
         timeLeft--;
@@ -130,7 +148,7 @@ function timeCount() {
         finishQuiz();
     }
 }
-
+// startQuiz button is clicked and question page is triggered.
 function renderQuestion() {
     correctSound.stop();
     wrongSound.stop();
@@ -154,7 +172,7 @@ function renderQuestion() {
     index++;
 }
 
-
+// multiple choices button is clicked and answer-checker is triggered.
 function checkAns(pick) {
     var ans = questionCollection[index - 1].answer;
     if (pick === ans) {
@@ -170,7 +188,7 @@ function checkAns(pick) {
 }
 
 
-
+// When questions are all finished or time runs out,  initial-name page is triggered
 function finishQuiz() {
     index = 0;
     if (timeLeft < 0) {
@@ -201,11 +219,15 @@ function finishQuiz() {
     }, 1500);
 }
 
+
+// When initial name is entered and submit button is clicked
 function submitScore() {
+    // inital name enter validation
     if (initial.value === null || initial.value === "") {
         alert("Please Enter Your Valid Initial.");
         return;
     }
+    // store inital name to localstore
     else {
         var initialInput = initial.value.trim();
         initial.value = "";
@@ -224,6 +246,7 @@ function submitScore() {
     }
 }
 
+//Submit button is click and highscore/final page is triggered
 function renderRecorePage() {
     endingSound.play();
     landingPage.style.display = "none";
@@ -232,17 +255,16 @@ function renderRecorePage() {
     header.style.display = "none";
     finalPage.style.display = "block";
     record = JSON.parse(localStorage.getItem("data"));
-    record.sort(compare);
-    //localStorage.setItem("data", JSON.stringify(record));
+    record.sort(compare);  // sort in decending order by score
     for (var i = 0; i < record.length; i++) {
         var currentScore = document.createElement("div");
-        if (i === 0) {
+        if (i === 0) { //highest
             currentScore.textContent = "🏅" + (i + 1) + ". " + record[i].initialName + " - " + record[i].score;
             currentScore.style.backgroundColor = "gold";
-        } else if (i === 1) {
+        } else if (i === 1) { //second highest
             currentScore.textContent = "🥈" + (i + 1) + ". " + record[i].initialName + " - " + record[i].score;
             currentScore.style.backgroundColor = "silver";
-        } else if (i === 2) {
+        } else if (i === 2) { //third highest
             currentScore.textContent = "🥉" + (i + 1) + ". " + record[i].initialName + " - " + record[i].score;
             currentScore.style.backgroundColor = "#b87333"; //copper
         } else {
@@ -254,7 +276,7 @@ function renderRecorePage() {
     }
 }
 
-
+// Compare function for the array-sort to list out the local store data in decending order
 function compare(a, b) {
     return b.score - a.score;
 }
