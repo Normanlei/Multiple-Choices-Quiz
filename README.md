@@ -6,13 +6,13 @@
 
 Currently, the Quiz I built has a few criterias as below:
 * Landing Page to trigger the start quiz button
-![Image of Screenshot] <img src="asset/image/landing-page.png" height="200px">
+<img src="asset/image/landing-page.png" height="200px">
 * Question Page to render the questions along with timer constraints
-![Image of Screenshot]<img src="asset/image/question-page.png" height="200px">
+<img src="asset/image/question-page.png" height="200px">
 * Initial Name page to local store the score along with your initial name
-![Image of Screenshot]<img src="asset/image/initial-name-page.png" height="200px">
+<img src="asset/image/initial-name-page.png" height="200px">
 * Final/Highscores page to list out all the data in localstore
-![Image of Screenshot]<img src="asset/image/final-page.png" height="200px">
+<img src="asset/image/final-page.png" height="200px">
 
 
 
@@ -23,10 +23,16 @@ In the process of building this quiz, I have learned:
 * Familiarize the bootstrap tags and utilize the documentations resourses on bootstrap website
 * Realize using Bootstrap tags to build the main structure of the site is much more consice and easier
 * Familiarize using javascript to add more functional features along with html and css styling
-* Especially heavily using "alert", "prompt", "confirm", "function()", "onclick" and etc.
+* Get my head wet on jQuery to similate adding functional features as Javascript
+* Familiarize using audio tag in html, and make is function in Javascript
+<img src="asset/image/audio-tag.png">
+* Familiarize using localStorage to persist data
+* Especially make used of these funcional features: 
+- Built-in Comparator funciton for arrays.sort
+- Add prototype onto audio tag in html
+- audio.play(), audio.stop()
 * Adding some logic functionalities feature, like:
-
-
+![](https://drive.google.com/file/d/1jzJSCGF9kNdmy50hd9IV2QjOlOzMta0o/view)
 
 ## Credits 
 
