@@ -6,13 +6,13 @@
 
 Currently, the Quiz I built has a few criterias as below:
 * Landing Page to trigger the start quiz button
-![Image of Screenshot](asset/image/landing-page.png =250x250)
+![Image of Screenshot](asset/image/landing-page.png=200x200)
 * Question Page to render the questions along with timer constraints
-![Image of Screenshot](asset/image/question-page.png)
+![Image of Screenshot](asset/image/question-page.png=200x200)
 * Initial Name page to local store the score along with your initial name
-![Image of Screenshot](asset/image/initial-name-page.png)
+![Image of Screenshot](asset/image/initial-name-page.png=200x200)
 * Final/Highscores page to list out all the data in localstore
-![Image of Screenshot](asset/image/final-page.png)
+![Image of Screenshot](asset/image/final-page.png=200x200)
 
 
 
